@@ -24,11 +24,12 @@ export const HW3 = () => {
     //   // setCurrentText(ЧЕГО-ТО НЕ ХВАТАЕТ);
     // };
 
-    const handleSave = () => {
+    const handleSave = (text:string) => {
         // ЗАСЕТАТЬ БЫ ТЕКСТ В texts И НЕ ПОТЕРЯТЬ НАПУТСТВИЕ ИЗ ПРОШЛОГО ВЕКА)
         // А ЗАТЕМ УБРАТЬ ЗА СОБОЙ В currentText
         console.log('you here')
-        let newWork = [currentText]
+        let newWork: Array<string> = texts.map(t => t + text )
+
         setTexts(newWork)
     };
 
@@ -43,7 +44,7 @@ export const HW3 = () => {
             {/*<input id={'hw03-input'} type="text" value={currentText} />*/}
             <input id={'hw03-input'} type="text" value={currentText} onChange={handleChange}/>
 
-            <button id={'hw03-button'} onClick={() => handleSave()}> // НЕ ХВАТАТЕТ ФУНКЦИИ
+            <button id={'hw03-button'} onClick={() => handleSave(currentText)}> // НЕ ХВАТАТЕТ ФУНКЦИИ
                 Сохранить
             </button>
             {/*  <button id={'hw03-button'} onClick={() => {}}> // НЕ ХВАТАТЕТ ФУНКЦИИ*/}
