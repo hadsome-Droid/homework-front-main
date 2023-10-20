@@ -18,7 +18,7 @@ export const HW3 = () => {
 
     const handleChange = (event:  ChangeEvent<HTMLInputElement>) => {
         console.log('<=>', currentText)
-        setCurrentText(event.target.value);
+        setCurrentText(event.currentTarget.value);
     };
     // const handleChange = (event: 'НУЖНО ПРОТИПИЗИРОВАТЬ') => {
     //   // setCurrentText(ЧЕГО-ТО НЕ ХВАТАЕТ);
@@ -28,15 +28,16 @@ export const HW3 = () => {
         // ЗАСЕТАТЬ БЫ ТЕКСТ В texts И НЕ ПОТЕРЯТЬ НАПУТСТВИЕ ИЗ ПРОШЛОГО ВЕКА)
         // А ЗАТЕМ УБРАТЬ ЗА СОБОЙ В currentText
         console.log('you here')
-        let newWork: Array<string> = texts.map(t => t + text )
+        let newWork = [text, ...texts]
 
         setTexts(newWork)
+        setCurrentText('')
     };
 
     return (
         <div id={'hw03'}>
             {currentText ? (
-                <h1 id={'hw03-text'}>ЗДЕСЬ ХОТЕЛОСЬ БЫ УВИДЕТЬ ВВОДИМЫЙ ТЕКСТ</h1>
+                <h1 id={'hw03-text'}>{currentText}</h1>
             ) : (
                 <h1 id={'hw03-default-text'}>Здесь появится новое дело</h1> // ничего не меняем, здесь все норм
             )}
@@ -44,7 +45,7 @@ export const HW3 = () => {
             {/*<input id={'hw03-input'} type="text" value={currentText} />*/}
             <input id={'hw03-input'} type="text" value={currentText} onChange={handleChange}/>
 
-            <button id={'hw03-button'} onClick={() => handleSave(currentText)}> // НЕ ХВАТАТЕТ ФУНКЦИИ
+            <button id={'hw03-button'} onClick={() => handleSave(currentText)}>
                 Сохранить
             </button>
             {/*  <button id={'hw03-button'} onClick={() => {}}> // НЕ ХВАТАТЕТ ФУНКЦИИ*/}
