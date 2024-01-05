@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, KeyboardEventHandler, useState} from 'react'
+import React, {KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
 import {UserType} from './HW3'
 
@@ -28,7 +28,7 @@ export const pureOnBlur = (name: string, setError: (error: string) => void) => {
 
 export const pureOnEnter = (e: KeyboardEvent<Element>, addUser: () => void) => {
     // если нажата кнопка Enter - добавить
-    if(e.key === 'Enter') {
+    if (e.key === 'Enter') {
         addUser()
     }
 }

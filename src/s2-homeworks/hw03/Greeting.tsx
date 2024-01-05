@@ -1,4 +1,4 @@
-import React, {ChangeEvent, ChangeEventHandler, KeyboardEvent, KeyboardEventHandler} from 'react'
+import React, {KeyboardEventHandler} from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {

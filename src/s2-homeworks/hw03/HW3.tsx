@@ -1,4 +1,4 @@
-import React, {SetStateAction, useState} from 'react'
+import React, {useState} from 'react'
 import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
@@ -39,7 +39,7 @@ const HW3 = () => {
         pureAddUserCallback(name, setUsers, users)
     }
 
-// React.Dispatch<SetStateAction<UserType[]>>
+
     return (
         <div id={'hw3'}>
             <div className={s2.hwTitle}>Homework #3</div>
