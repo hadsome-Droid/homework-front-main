@@ -10,11 +10,6 @@ const Stand = () => {
 
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
 
-    // if (onChangeChecked) {
-    //     onChangeChecked(e.currentTarget.checked);
-    //     console.log(restProps)
-    // }
-    // onChange?.(e)
     return (
         <div id={'hw4-stand'} className={s.stand}>
             <div className={s.inputs}>
