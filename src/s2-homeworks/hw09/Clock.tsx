@@ -30,7 +30,7 @@ function Clock() {
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
         setShow(false)
     }
-    const time = date.toLocaleTimeString()
+    const time = date.toLocaleTimeString('en-GB', {hour12: true})
     const myDate = date.toLocaleDateString('en-GB')
 
     const stringTime = `${time}` || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
