@@ -12,6 +12,9 @@ const store = legacy_createStore(reducers)
 export default store
 
 export type AppStoreType = ReturnType<typeof reducers>
-
+// export type AppThunkDispatch = ThunkDispatch<AppRootStateType, any, AnyAction>
+//
+// export const useAppDispatch = () => useDispatch<AppThunkDispatch>();
+// export const useAppSelector: TypedUseSelectorHook<AppRootStateType> = useSelector
 // @ts-ignore
 window.store = store // for dev // для того чтобы автотесты видели состояние данных
