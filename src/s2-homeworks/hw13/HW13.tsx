@@ -37,11 +37,33 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-
+                // setInfo('')
             })
             .catch((e) => {
                 // дописать
+                if(e.response.status === 400){
 
+                    setCode('Код 400!')
+                    setImage(error400)
+                    // setInfo('')
+
+                } else if (e.response.status  === 500) {
+
+                    setCode('Код 500!')
+                    setImage(error500)
+                    // setInfo('')
+
+                } else{
+
+                    setCode('Неизвестный код!')
+                    setImage(errorUnknown)
+                    // setInfo('')
+
+                }
+
+            })
+            .finally(() => {
+                setInfo('')
             })
     }
 
@@ -56,7 +78,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info === '...loading'}
                     >
                         Send true
                     </SuperButton>
@@ -65,6 +87,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading'}
 
                     >
                         Send false
@@ -74,6 +97,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading'}
 
                     >
                         Send undefined
@@ -83,6 +107,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
+                        disabled={info === '...loading'}
 
                     >
                         Send null

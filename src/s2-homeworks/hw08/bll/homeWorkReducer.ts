@@ -10,6 +10,7 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
             const stateCopy = [...state]
             switch (action.payload){
                 case 'up':
+                    // return stateCopy.sort((a, b) => a.name.localeCompare(b.name))
                     return stateCopy.sort((a, b) => a.name.localeCompare(b.name))
                 case 'down':
                     return stateCopy.sort((a, b) => b.name.localeCompare(a.name))
