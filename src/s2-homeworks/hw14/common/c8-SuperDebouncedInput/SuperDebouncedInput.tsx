@@ -30,7 +30,7 @@ const SuperDebouncedInput: React.FC<SuperDebouncedInputPropsType> = (
 
     const onChangeTextCallback = (value: string) => {
         onChangeText?.(value)
-
+// илм экспортировать тип SuperInputTextPropsType
         if (onDebouncedChange) {
 
             if (timerId) {
