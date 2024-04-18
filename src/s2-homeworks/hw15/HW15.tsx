@@ -55,10 +55,10 @@ const HW15 = () => {
                 if (res) {
                     setTechs(res.data.techs)
                     setTotalCount(res.data.totalCount)
-                    setLoading(false)
+
                 }
                 // сохранить пришедшие данные
-
+                setLoading(false)
                 //
             })
     }
@@ -96,7 +96,9 @@ const HW15 = () => {
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
+        // sendQuery({page: params.page, count: params.count})
+        sendQuery(params)
+
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [searchParams])
